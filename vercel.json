@@ -5,8 +5,7 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/static",
-        "cleanUrls": true
+        "distDir": "dist/static"
       }
     }
   ],
@@ -19,8 +18,10 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/",
+      "dest": "/static/index.html",
       "status": 200
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
