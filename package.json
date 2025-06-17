@@ -6,7 +6,7 @@
   "scripts": {
     "dev:client": "vite --host --port 3000",
     "dev": "pnpm dev:client",
-    "build:client": "vite build --outDir dist/static",
+    "build:client": "vite build --outDir dist/static --base=/",
     "build": "rm -rf dist && pnpm build:client && cp package.json dist && cp -r public dist/static && touch dist/build.flag"
   },
   "dependencies": {
