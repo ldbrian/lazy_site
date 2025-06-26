@@ -126,9 +126,11 @@ export default function Home() {
                       </button>
                     </a>
                   ) : (
-                    <button className="w-full py-3 rounded-md font-medium transition-colors bg-blue-600 hover:bg-blue-700 text-white">
-                      Buy Now
-                    </button>
+                    <a href="https://brianspark83.gumroad.com/l/gzzppzv" target="_blank" rel="noopener noreferrer">
+                      <button className="w-full py-3 rounded-md font-medium transition-colors bg-blue-600 hover:bg-blue-700 text-white">
+                        Buy Now
+                      </button>
+                    </a>
                   )}
               </div>
             ))}

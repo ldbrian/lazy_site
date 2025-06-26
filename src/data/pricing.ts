@@ -19,7 +19,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     plan: 'paid',
-    price: '¥9.9',
+    price: '$1.99',
     features: [
       'Unlimited file processing',
       'Advanced data cleaning',
