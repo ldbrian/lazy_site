@@ -22,6 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/other" element={<div className="text-center text-xl">Other Page - Coming Soon</div>} />
+        <Route path="/health" element={<div>OK</div>} />
       </Routes>
     </AuthContext.Provider>
   );
