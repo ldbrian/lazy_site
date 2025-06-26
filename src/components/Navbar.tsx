@@ -9,14 +9,7 @@ export default function Navbar() {
             <h1 className="text-xl font-bold text-green-600">Lazy Excel Toolkit</h1>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center space-x-4">
-              <a href="#" className="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">
-                Download
-              </a>
-              <a href="#" className="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">
-                Documentation
-              </a>
-            </div>
+          
           </div>
         </div>
       </div>

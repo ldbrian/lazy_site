@@ -45,14 +45,13 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Lazy Excel Toolkit provides one-click batch processing features, saving you 90% of spreadsheet processing time
             </p>
-            <div className="mt-8 flex justify-center space-x-4">
-               <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition-colors">
-                 Free Download
-               </button>
-               <button className="border border-gray-300 hover:border-green-600 text-gray-700 px-6 py-3 rounded-md font-medium transition-colors">
-                 View Demo
-               </button>
-            </div>
+             <div className="mt-8 flex justify-center">
+               <a href="blob:https://gumroad.com/5f71b5ab-07aa-4a5b-a861-03fccdde1852" target="_blank" rel="noopener noreferrer">
+                 <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition-colors">
+                    Free Download
+                 </button>
+               </a>
+             </div>
           </div>
         </div>
       </section>
@@ -120,13 +119,17 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                 <button className={`w-full py-3 rounded-md font-medium transition-colors ${
-                   plan.plan === 'trial' 
-                     ? 'bg-green-600 hover:bg-green-700 text-white' 
-                     : 'bg-blue-600 hover:bg-blue-700 text-white'
-                 }`}>
-                    {plan.plan === 'trial' ? 'Download Now' : 'Buy Now'}
-                 </button>
+                  {plan.plan === 'trial' ? (
+                    <a href="blob:https://gumroad.com/5f71b5ab-07aa-4a5b-a861-03fccdde1852" target="_blank" rel="noopener noreferrer">
+                      <button className="w-full py-3 rounded-md font-medium transition-colors bg-green-600 hover:bg-green-700 text-white">
+                        Download Now
+                      </button>
+                    </a>
+                  ) : (
+                    <button className="w-full py-3 rounded-md font-medium transition-colors bg-blue-600 hover:bg-blue-700 text-white">
+                      Buy Now
+                    </button>
+                  )}
               </div>
             ))}
           </div>

@@ -6,8 +6,9 @@
   "scripts": {
     "dev:client": "vite --host --port 3000",
     "dev": "pnpm dev:client",
-    "build:client": "vite build --outDir dist --base=/",
-    "build": "rm -rf dist && pnpm build:client"
+    "build:client": "vite build --outDir dist --base=./",
+    "build": "rm -rf dist && pnpm build:client",
+    "preview": "vite preview --port 3000"
   },
   "dependencies": {
     "clsx": "^2.1.1",
