@@ -1,8 +1,14 @@
 {
   "version": 2,
   "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install --unsafe-perm --shamefully-hoist",
+  "installCommand": "pnpm install --unsafe-perm --shamefully-hoist --force",
   "outputDirectory": "dist",
+  "env": {
+    "PNPM_SCRIPT_PREVIEW": "true",
+    "FORCE_NO_BUILD_CACHE": "1",
+    "VERCEL_CACHE_DISABLED": "1"
+  },
+  "cleanUrls": true,
   "routes": [
     {
       "src": "/health",
@@ -48,7 +54,8 @@
       "use": "@vercel/static-build",
       "config": {
         "forceInstall": true,
-        "includeFiles": ["**"]
+        "includeFiles": ["**"],
+        "zeroConfig": true
       }
     }
   ]
