@@ -18,9 +18,22 @@ export default function Footer() {
             <p className="text-center text-sm text-gray-500">
               © 2025 Lazy Excel Toolkit. All rights reserved.
             </p>
-            <p className="text-center text-xs text-gray-400 mt-2">
-               部署版本: {import.meta.env.VITE_BUILD_TIME || 'development'}
-             </p>
+             <div className="text-center text-xs text-gray-400 mt-2 space-y-1">
+               <p>部署版本: {import.meta.env.VITE_BUILD_TIME || 'development'}</p>
+               {import.meta.env.VERCEL_GIT_COMMIT_SHA && (
+                 <>
+                   <p>Commit: {import.meta.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)}</p>
+                   <p>Branch: {import.meta.env.VERCEL_GIT_COMMIT_REF || 'main'}</p>
+                   <p>Deploy ID: {import.meta.env.VERCEL_URL || 'local'}</p>
+                 </>
+               )}
+               {import.meta.env.VERCEL_GIT_COMMIT_MESSAGE && (
+                 <p>Message: {import.meta.env.VERCEL_GIT_COMMIT_MESSAGE}</p>
+               )}
+               {!import.meta.env.VERCEL_GIT_COMMIT_SHA && (
+                 <p className="text-red-500">未检测到Vercel部署信息</p>
+               )}
+             </div>
           </div>
         </div>
       </div>

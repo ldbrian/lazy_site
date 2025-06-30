@@ -7,7 +7,9 @@
     "PNPM_SCRIPT_PREVIEW": "true",
     "FORCE_NO_BUILD_CACHE": "1",
     "VERCEL_CACHE_DISABLED": "1",
-    "NODE_OPTIONS": "--max-old-space-size=4096"
+    "NODE_OPTIONS": "--max-old-space-size=4096",
+    "VERCEL_GIT_COMMIT_SHA": "$VERCEL_GIT_COMMIT_SHA",
+    "VERCEL_GIT_COMMIT_MESSAGE": "$VERCEL_GIT_COMMIT_MESSAGE"
   },
   "cleanUrls": true,
   "routes": [
@@ -60,5 +62,18 @@
         "nodeVersion": "18.x"
       }
     }
-  ]
+  ],
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "silent": false,
+    "autoJobCancelation": true,
+    "previewComments": true,
+    "deployHooks": {
+      "production": {
+        "url": "https://api.vercel.com/v1/integrations/deploy/prj_xxxxxxxxxxxxxx",
+        "events": ["push"]
+      }
+    }
+  }
 }
