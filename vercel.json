@@ -78,6 +78,6 @@
     }
   },
   "regions": ["hkg1"],
-  "public": true,
-  "logtail": true
+  "public": true
+
 }
