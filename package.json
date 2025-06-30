@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "esbuild": "^0.20.2",
     "framer-motion": "^12.9.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -34,25 +33,6 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "pnpm": {
-    "allowedDeprecatedVersions": {
-      "esbuild": "0.20.2"
-    },
-    "peerDependencyRules": {
-      "ignoreMissing": ["esbuild"]
-    },
-    "neverBuiltDependencies": [],
-    "patchedDependencies": {
-      "esbuild@0.20.2": "patches/esbuild@0.20.2.patch"
-    },
-    "scripts": {
-      "preinstall": "pnpm approve-builds esbuild"
-    },
-    "packageExtensions": {
-      "esbuild@0.20.2": {
-        "scripts": {
-          "postinstall": "node scripts/postinstall.js"
-        }
-      }
-    }
+    "neverBuiltDependencies": []
   }
 }

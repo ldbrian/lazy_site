@@ -6,7 +6,8 @@
   "env": {
     "PNPM_SCRIPT_PREVIEW": "true",
     "FORCE_NO_BUILD_CACHE": "1",
-    "VERCEL_CACHE_DISABLED": "1"
+    "VERCEL_CACHE_DISABLED": "1",
+    "NODE_OPTIONS": "--max-old-space-size=4096"
   },
   "cleanUrls": true,
   "routes": [
@@ -55,7 +56,8 @@
       "config": {
         "forceInstall": true,
         "includeFiles": ["**"],
-        "zeroConfig": true
+        "zeroConfig": true,
+        "nodeVersion": "18.x"
       }
     }
   ]
