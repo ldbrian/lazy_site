@@ -4,7 +4,6 @@
   "installCommand": "pnpm install --unsafe-perm --shamefully-hoist --force",
   "outputDirectory": "dist",
   "env": {
-    "PNPM_SCRIPT_PREVIEW": "true",
     "NODE_OPTIONS": "--max-old-space-size=4096",
     "VERCEL_GIT_COMMIT_SHA": "$VERCEL_GIT_COMMIT_SHA",
     "VERCEL_GIT_COMMIT_MESSAGE": "$VERCEL_GIT_COMMIT_MESSAGE",
@@ -13,24 +12,15 @@
     "VERCEL_GIT_REPO_SLUG": "$VERCEL_GIT_REPO_SLUG"
   },
   "cleanUrls": true,
-  "routes": [
-    {
-      "src": "/health",
-      "dest": "/health.html",
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html",
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate"
-      }
-    }
-  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { 
+      "source": "/health",
+      "destination": "/health.html"
+    },
+    { 
+      "source": "/(.*)",
+      "destination": "/index.html" 
+    }
   ],
   "headers": [
     {
@@ -41,15 +31,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
     }
   ],
   "builds": [
@@ -57,9 +38,6 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "forceInstall": true,
-        "includeFiles": ["**"],
-        "zeroConfig": true,
         "nodeVersion": "18.x"
       }
     }
@@ -67,17 +45,7 @@
   "github": {
     "enabled": true,
     "autoAlias": true,
-    "silent": false,
-    "autoJobCancelation": true,
-    "previewComments": true,
-    "deployHooks": {
-      "production": {
-        "url": "https://api.vercel.com/v1/integrations/deploy/prj_xxxxxxxxxxxxxx",
-        "events": ["push", "pull_request"]
-      }
-    }
+    "autoJobCancelation": true
   },
-  "regions": ["hkg1"],
-  "public": true
-
+  "regions": ["hkg1"]
 }
