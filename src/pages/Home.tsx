@@ -46,7 +46,7 @@ export default function Home() {
               Lazy Excel Toolkit provides one-click batch processing features, saving you 90% of spreadsheet processing time
             </p>
              <div className="mt-8 flex justify-center">
-               <a href="https://gumroad.com/5f71b5ab-07aa-4a5b-a861-03fccdde1852" target="_blank" rel="noopener noreferrer">
+               <a href="https://brianspark83.gumroad.com/l/kdvukn" target="_blank" rel="noopener noreferrer">
                  <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition-colors">
                     Free Download
                  </button>
@@ -120,7 +120,7 @@ export default function Home() {
                   ))}
                 </ul>
                   {plan.plan === 'trial' ? (
-                    <a href="https://gumroad.com/5f71b5ab-07aa-4a5b-a861-03fccdde1852" target="_blank" rel="noopener noreferrer">
+                    <a href="https://brianspark83.gumroad.com/l/kdvukn" target="_blank" rel="noopener noreferrer">
                       <button className="w-full py-3 rounded-md font-medium transition-colors bg-green-600 hover:bg-green-700 text-white">
                         Download Now
                       </button>
