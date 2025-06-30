@@ -24,6 +24,7 @@ export default function Footer() {
                  <>
                    <p>Commit: {import.meta.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)}</p>
                    <p>Branch: {import.meta.env.VERCEL_GIT_COMMIT_REF || 'main'}</p>
+                   <p>Repo: {import.meta.env.VERCEL_GIT_REPO_OWNER}/{import.meta.env.VERCEL_GIT_REPO_SLUG}</p>
                    <p>Deploy ID: {import.meta.env.VERCEL_URL || 'local'}</p>
                  </>
                )}
@@ -31,7 +32,7 @@ export default function Footer() {
                  <p>Message: {import.meta.env.VERCEL_GIT_COMMIT_MESSAGE}</p>
                )}
                {!import.meta.env.VERCEL_GIT_COMMIT_SHA && (
-                 <p className="text-red-500">未检测到Vercel部署信息</p>
+                 <p className="text-red-500">未检测到Vercel部署信息，请检查GitHub集成设置</p>
                )}
              </div>
           </div>

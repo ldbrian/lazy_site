@@ -5,11 +5,12 @@
   "outputDirectory": "dist",
   "env": {
     "PNPM_SCRIPT_PREVIEW": "true",
-    "FORCE_NO_BUILD_CACHE": "1",
-    "VERCEL_CACHE_DISABLED": "1",
     "NODE_OPTIONS": "--max-old-space-size=4096",
     "VERCEL_GIT_COMMIT_SHA": "$VERCEL_GIT_COMMIT_SHA",
-    "VERCEL_GIT_COMMIT_MESSAGE": "$VERCEL_GIT_COMMIT_MESSAGE"
+    "VERCEL_GIT_COMMIT_MESSAGE": "$VERCEL_GIT_COMMIT_MESSAGE",
+    "VERCEL_GIT_COMMIT_REF": "$VERCEL_GIT_COMMIT_REF",
+    "VERCEL_GIT_REPO_OWNER": "$VERCEL_GIT_REPO_OWNER",
+    "VERCEL_GIT_REPO_SLUG": "$VERCEL_GIT_REPO_SLUG"
   },
   "cleanUrls": true,
   "routes": [
@@ -72,8 +73,11 @@
     "deployHooks": {
       "production": {
         "url": "https://api.vercel.com/v1/integrations/deploy/prj_xxxxxxxxxxxxxx",
-        "events": ["push"]
+        "events": ["push", "pull_request"]
       }
     }
-  }
+  },
+  "regions": ["hkg1"],
+  "public": true,
+  "logtail": true
 }
