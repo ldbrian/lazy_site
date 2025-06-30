@@ -18,6 +18,9 @@ export default function Footer() {
             <p className="text-center text-sm text-gray-500">
               © 2025 Lazy Excel Toolkit. All rights reserved.
             </p>
+            <p className="text-center text-xs text-gray-400 mt-2">
+               部署版本: {import.meta.env.VITE_BUILD_TIME || 'development'}
+             </p>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "pnpm run build",
+  "buildCommand": "VITE_BUILD_TIME=$(date +'%Y-%m-%d %H:%M:%S') pnpm run build",
   "installCommand": "pnpm install --unsafe-perm --shamefully-hoist --force",
   "outputDirectory": "dist",
   "env": {
